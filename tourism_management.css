@@ -1,0 +1,41 @@
+.root {
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+.text-input, .text-area {
+    -fx-background-color: #1e293b;
+    -fx-text-fill: #f8fafc;
+    -fx-border-color: #334155;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px;
+}
+
+.button {
+    -fx-cursor: hand;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 16px;
+}
+
+.table-view {
+    -fx-background-color: #1e293b;
+    -fx-border-color: #334155;
+}
+
+.table-view .column-header {
+    -fx-background-color: #334155;
+    -fx-text-fill: white;
+}
+
+.table-row-cell {
+    -fx-background-color: #0f172a;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #1e293b;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #3b82f6;
+}

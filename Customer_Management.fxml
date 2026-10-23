@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="730.0" prefWidth="880.0" 
+            stylesheets="@customer_management.css" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="Hospitality_and_tourism_system.Customer_ManagementController">
+   <children>
+      
+      <!-- Top Title Header -->
+      <Label layoutX="35.0" layoutY="20.0" text="👑 Room Reservation" styleClass="invoice-title" />
+      <Label layoutX="37.0" layoutY="52.0" text="Manage client details and VIP bookings effortlessly" />
+
+      <!-- Main Container Glass Card -->
+      <AnchorPane fx:id="invoicePane" layoutX="35.0" layoutY="85.0" prefHeight="620.0" prefWidth="810.0" styleClass="glass-panel">
+         <children>
+            
+            <!-- Customer ID & NIC -->
+            <Label layoutX="25.0" layoutY="18.0" text="🆔 CUSTOMER ID" />
+            <TextField fx:id="txtCustomerId" layoutX="25.0" layoutY="35.0" prefHeight="34.0" prefWidth="365.0" promptText="Auto Generated" />
+
+            <Label layoutX="420.0" layoutY="18.0" text="🪪 CUSTOMER NIC" />
+            <TextField fx:id="txtCustomerNic" layoutX="420.0" layoutY="35.0" prefHeight="34.0" prefWidth="365.0" promptText="Enter NIC to Search, Update or Delete" />
+
+            <!-- First Name & Last Name -->
+            <Label layoutX="25.0" layoutY="76.0" text="👤 FIRST NAME" />
+            <TextField fx:id="txtFirstName" layoutX="25.0" layoutY="93.0" prefHeight="34.0" prefWidth="365.0" promptText="First Name" />
+
+            <Label layoutX="420.0" layoutY="76.0" text="👤 LAST NAME" />
+            <TextField fx:id="txtLastName" layoutX="420.0" layoutY="93.0" prefHeight="34.0" prefWidth="365.0" promptText="Last Name" />
+
+            <!-- Address -->
+            <Label layoutX="25.0" layoutY="134.0" text="📍 ADDRESS" />
+            <TextField fx:id="txtCustomerAddress" layoutX="25.0" layoutY="151.0" prefHeight="34.0" prefWidth="760.0" promptText="Residential Street Address, City" />
+
+            <!-- Phone Number & Email -->
+            <Label layoutX="25.0" layoutY="192.0" text="📞 PHONE NUMBER" />
+            <TextField fx:id="txtCustomerPhone" layoutX="25.0" layoutY="209.0" prefHeight="34.0" prefWidth="365.0" promptText="+94 7X XXX XXXX" />
+
+            <Label layoutX="420.0" layoutY="192.0" text="📧 EMAIL ADDRESS" />
+            <TextField fx:id="txtEmail" layoutX="420.0" layoutY="209.0" prefHeight="34.0" prefWidth="365.0" promptText="name@example.com" />
+
+            <!-- Room Type & Room Number -->
+            <Label layoutX="25.0" layoutY="250.0" text="🛏️ ROOM TYPE" />
+            <ComboBox fx:id="cmbRoomType" layoutX="25.0" layoutY="267.0" prefHeight="34.0" prefWidth="365.0" promptText="Select Room Type" />
+
+            <Label layoutX="420.0" layoutY="250.0" text="🚪 ROOM NUMBER &amp; STATUS" />
+            <ComboBox fx:id="cmbRoomNumber" layoutX="420.0" layoutY="267.0" prefHeight="34.0" prefWidth="365.0" promptText="Select Available Room" />
+
+            <!-- No of Rooms, Nights & Persons -->
+            <Label layoutX="25.0" layoutY="308.0" text="🔢 ROOMS" />
+            <TextField fx:id="txtNoOfRooms" layoutX="25.0" layoutY="325.0" prefHeight="34.0" prefWidth="235.0" promptText="1" />
+
+            <Label layoutX="287.0" layoutY="308.0" text="🌙 NIGHTS" />
+            <TextField fx:id="txtNoOfNights" layoutX="287.0" layoutY="325.0" prefHeight="34.0" prefWidth="235.0" promptText="1" />
+
+            <Label layoutX="550.0" layoutY="308.0" text="👥 PERSONS" />
+            <TextField fx:id="txtNoOfPersons" layoutX="550.0" layoutY="325.0" prefHeight="34.0" prefWidth="235.0" promptText="1" />
+
+<!-- In Date & Out Date -->
+        <Label layoutX="25.0" layoutY="366.0" text="📅 CHECK-IN DATE" />
+        <DatePicker fx:id="dpInDate" layoutX="25.0" layoutY="383.0" prefHeight="34.0" prefWidth="365.0" promptText="YYYY-MM-DD" />
+
+        <Label layoutX="420.0" layoutY="366.0" text="📅 CHECK-OUT DATE" />
+        <DatePicker fx:id="dpOutDate" layoutX="420.0" layoutY="383.0" prefHeight="34.0" prefWidth="365.0" promptText="YYYY-MM-DD" />
+
+            <!-- Divider Line -->
+            <Separator layoutX="25.0" layoutY="430.0" prefWidth="760.0" />
+            <Label layoutX="25.0" layoutY="440.0" text="💳 Billing &amp; Payment Summary" />
+
+            <!-- Radio Buttons (Cash & Credit Card) -->
+            <HBox layoutX="240.0" layoutY="435.0" spacing="25.0" style="-fx-alignment: center-left;">
+               <children>
+                  <RadioButton fx:id="rbCash" mnemonicParsing="false" selected="true" text="💵 Cash">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="paymentGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbCard" mnemonicParsing="false" text="💳 Credit Card" toggleGroup="$paymentGroup" />
+               </children>
+            </HBox>
+
+            <!-- 4 Summary Fields -->
+            <Label layoutX="25.0" layoutY="485.0" text="💰 TOTAL" />
+            <TextField fx:id="txtTotal" layoutX="25.0" layoutY="500.0" prefHeight="32.0" prefWidth="175.0" promptText="0.00" />
+
+            <Label layoutX="215.0" layoutY="485.0" text="💵 NET TOTAL" />
+            <TextField fx:id="txtNetTotal" layoutX="215.0" layoutY="500.0" prefHeight="32.0" prefWidth="175.0" promptText="0.00" />
+
+            <Label layoutX="405.0" layoutY="485.0" text="💰 PAY AMOUNT" />
+            <TextField fx:id="txtPayAmount" layoutX="405.0" layoutY="500.0" prefHeight="32.0" prefWidth="175.0" promptText="0.00" />
+
+            <Label layoutX="595.0" layoutY="485.0" text="⚖️ BALANCE" />
+            <TextField fx:id="txtBalance" layoutX="595.0" layoutY="500.0" prefHeight="32.0" prefWidth="175.0" promptText="0.00" />
+
+            <!-- Action Buttons (Save, Update, Delete, Clear) -->
+            <Button fx:id="btnSave" layoutX="190.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="38.0" prefWidth="95.0" text="💾Save" />
+            <Button fx:id="btnUpdate" layoutX="295.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="38.0" prefWidth="95.0" styleClass="update-button" text="✏️Update" />
+            <Button fx:id="btnDelete" layoutX="400.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleDelete" prefHeight="38.0" prefWidth="95.0" styleClass="delete-button" text="🗑️Delete" />
+            <Button fx:id="btnClear" layoutX="505.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleClear" prefHeight="38.0" prefWidth="95.0" styleClass="clear-button" text="Clear" />
+
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

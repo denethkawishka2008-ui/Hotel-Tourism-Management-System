@@ -1,0 +1,195 @@
+<!-- Created with Jaspersoft Studio version 7.0.8.final using JasperReports Library version 7.0.8-6f896111  -->
+<jasperReport name="customer_history_report" language="java" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="791ee866-73d5-405e-bd56-99b978568abe">
+	<query language="SQL"><![CDATA[SELECT history_id, customer_nic, customer_id, first_name, last_name, room_type, room_number, in_date, out_date, total_amount, payment_method, booking_date FROM history]]></query>
+	<field name="history_id" class="java.lang.Integer"/>
+	<field name="customer_nic" class="java.lang.String"/>
+	<field name="customer_id" class="java.lang.String"/>
+	<field name="first_name" class="java.lang.String"/>
+	<field name="last_name" class="java.lang.String"/>
+	<field name="room_type" class="java.lang.String"/>
+	<field name="room_number" class="java.lang.String"/>
+	<field name="in_date" class="java.lang.String"/>
+	<field name="out_date" class="java.lang.String"/>
+	<field name="total_amount" class="java.lang.Double"/>
+	<field name="payment_method" class="java.lang.String"/>
+	<field name="booking_date" class="java.sql.Timestamp"/>
+	<background splitType="Stretch"/>
+	<title height="75" splitType="Stretch">
+		<element kind="rectangle" uuid="08e29c53-30cc-4bac-bd78-6fbb266ece9d" x="0" y="0" width="802" height="65" backcolor="#0F172A">
+			<pen lineWidth="0.0"/>
+		</element>
+		<element kind="staticText" uuid="88f56290-da63-493a-a57d-cfdc1a86dec8" x="80" y="15" width="640" height="35" forecolor="#38BDF8" fontSize="22.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[🏨 DK TOURISM HOTEL - COMPLETE CUSTOMER HISTORY]]></text>
+		</element>
+		<element kind="staticText" uuid="79c02289-89b0-4a19-bd62-99a080bc55fc" x="80" y="50" width="640" height="20" forecolor="#94A3B8" fontSize="10.0" italic="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Comprehensive Guest Logs, Financial Summaries & Records]]></text>
+		</element>
+	</title>
+	<columnHeader height="32" splitType="Stretch">
+		<element kind="rectangle" uuid="5be82eff-d571-4232-af16-08fc03ff9db8" x="0" y="0" width="802" height="32" backcolor="#1E293B">
+			<pen lineWidth="0.0"/>
+		</element>
+		<element kind="staticText" uuid="80025892-190c-4cbb-be40-e10102b2560e" x="0" y="0" width="35" height="32" forecolor="#FFFFFF" fontSize="9.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<box>
+				<pen lineWidth="0.5" lineColor="#334155"/>
+			</box>
+			<text><![CDATA[ID]]></text>
+		</element>
+		<element kind="staticText" uuid="5cf97094-50fb-4278-94f6-5fcd406f0a35" x="35" y="0" width="75" height="32" forecolor="#FFFFFF" fontSize="9.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<box>
+				<pen lineWidth="0.5" lineColor="#334155"/>
+			</box>
+			<text><![CDATA[NIC]]></text>
+		</element>
+		<element kind="staticText" uuid="cde0c783-9a9c-4a55-87c5-1998de3f83c6" x="110" y="0" width="55" height="32" forecolor="#FFFFFF" fontSize="9.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<box>
+				<pen lineWidth="0.5" lineColor="#334155"/>
+			</box>
+			<text><![CDATA[Cust ID]]></text>
+		</element>
+		<element kind="staticText" uuid="709d46f9-db32-4c07-a75c-b603ce536c71" x="165" y="0" width="75" height="32" forecolor="#FFFFFF" fontSize="9.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<box>
+				<pen lineWidth="0.5" lineColor="#334155"/>
+			</box>
+			<text><![CDATA[First Name]]></text>
+		</element>
+		<element kind="staticText" uuid="b64e387c-eea2-4333-a0f0-b50f31be8843" x="240" y="0" width="75" height="32" forecolor="#FFFFFF" fontSize="9.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<box>
+				<pen lineWidth="0.5" lineColor="#334155"/>
+			</box>
+			<text><![CDATA[Last Name]]></text>
+		</element>
+		<element kind="staticText" uuid="65efef10-ca45-4883-8865-ece123930b67" x="315" y="0" width="70" height="32" forecolor="#FFFFFF" fontSize="9.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<box>
+				<pen lineWidth="0.5" lineColor="#334155"/>
+			</box>
+			<text><![CDATA[Room Type]]></text>
+		</element>
+		<element kind="staticText" uuid="650972e9-154a-42ed-8898-f0bd8949ce24" x="385" y="0" width="60" height="32" forecolor="#FFFFFF" fontSize="9.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<box>
+				<pen lineWidth="0.5" lineColor="#334155"/>
+			</box>
+			<text><![CDATA[Room No]]></text>
+		</element>
+		<element kind="staticText" uuid="33fa5505-c17b-4c1e-97f3-e11d23910d4f" x="445" y="0" width="65" height="32" forecolor="#FFFFFF" fontSize="9.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<box>
+				<pen lineWidth="0.5" lineColor="#334155"/>
+			</box>
+			<text><![CDATA[Check In]]></text>
+		</element>
+		<element kind="staticText" uuid="abaa54f5-b507-4c5f-9d14-c175cbea4176" x="510" y="0" width="65" height="32" forecolor="#FFFFFF" fontSize="9.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<box>
+				<pen lineWidth="0.5" lineColor="#334155"/>
+			</box>
+			<text><![CDATA[Check Out]]></text>
+		</element>
+		<element kind="staticText" uuid="7b37df4d-b35b-4eaf-9578-9b0d3f6bbe48" x="575" y="0" width="70" height="32" forecolor="#FFFFFF" fontSize="9.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<box>
+				<pen lineWidth="0.5" lineColor="#334155"/>
+			</box>
+			<text><![CDATA[Amount (LKR)]]></text>
+		</element>
+		<element kind="staticText" uuid="43506016-c22e-4851-b401-18d3f6417982" x="645" y="0" width="75" height="32" forecolor="#FFFFFF" fontSize="9.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<box>
+				<pen lineWidth="0.5" lineColor="#334155"/>
+			</box>
+			<text><![CDATA[Payment]]></text>
+		</element>
+		<element kind="staticText" uuid="c1324e81-ac00-4c01-b53b-fe2e5ba343d6" x="720" y="0" width="82" height="32" forecolor="#FFFFFF" fontSize="9.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<box>
+				<pen lineWidth="0.5" lineColor="#334155"/>
+			</box>
+			<text><![CDATA[Booking Date]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<element kind="textField" uuid="eaf25d76-79ba-45d3-bf8a-10cecf5e4f84" x="0" y="0" width="35" height="25" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle">
+				<box>
+					<pen lineWidth="0.5" lineColor="#E2E8F0"/>
+				</box>
+				<expression><![CDATA[$F{history_id}]]></expression>
+			</element>
+			<element kind="textField" uuid="3e3d0881-b92c-4cc8-8ba3-92675c3fe7fd" x="35" y="0" width="75" height="25" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle">
+				<box>
+					<pen lineWidth="0.5" lineColor="#E2E8F0"/>
+				</box>
+				<expression><![CDATA[$F{customer_nic}]]></expression>
+			</element>
+			<element kind="textField" uuid="f28a8405-4d3d-4fc2-8bdd-01afb300e6e2" x="110" y="0" width="55" height="25" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle">
+				<box>
+					<pen lineWidth="0.5" lineColor="#E2E8F0"/>
+				</box>
+				<expression><![CDATA[$F{customer_id}]]></expression>
+			</element>
+			<element kind="textField" uuid="3a7f4099-aa2e-43e8-b718-ba41caceabd6" x="165" y="0" width="75" height="25" fontSize="8.0" hTextAlign="Left" vTextAlign="Middle">
+				<box>
+					<pen lineWidth="0.5" lineColor="#E2E8F0"/>
+				</box>
+				<expression><![CDATA[$F{first_name}]]></expression>
+			</element>
+			<element kind="textField" uuid="0a696aa7-c9ef-4ebd-ad15-d15ce3b74ff8" x="240" y="0" width="75" height="25" fontSize="8.0" hTextAlign="Left" vTextAlign="Middle">
+				<box>
+					<pen lineWidth="0.5" lineColor="#E2E8F0"/>
+				</box>
+				<expression><![CDATA[$F{last_name}]]></expression>
+			</element>
+			<element kind="textField" uuid="ee4689c7-df80-4755-a3a0-ef08f022644e" x="315" y="0" width="70" height="25" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle">
+				<box>
+					<pen lineWidth="0.5" lineColor="#E2E8F0"/>
+				</box>
+				<expression><![CDATA[$F{room_type}]]></expression>
+			</element>
+			<element kind="textField" uuid="8040004c-ff28-4bf0-b866-9e810fc203b5" x="385" y="0" width="60" height="25" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle">
+				<box>
+					<pen lineWidth="0.5" lineColor="#E2E8F0"/>
+				</box>
+				<expression><![CDATA[$F{room_number}]]></expression>
+			</element>
+			<element kind="textField" uuid="b6a04f0c-9df7-4e8f-9625-39607318223b" x="445" y="0" width="65" height="25" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle">
+				<box>
+					<pen lineWidth="0.5" lineColor="#E2E8F0"/>
+				</box>
+				<expression><![CDATA[$F{in_date}]]></expression>
+			</element>
+			<element kind="textField" uuid="63df450a-cde6-4810-a357-b7969bdb63fe" x="510" y="0" width="65" height="25" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle">
+				<box>
+					<pen lineWidth="0.5" lineColor="#E2E8F0"/>
+				</box>
+				<expression><![CDATA[$F{out_date}]]></expression>
+			</element>
+			<element kind="textField" uuid="930f3c33-7fca-4a24-8405-133b76ecac02" x="575" y="0" width="70" height="25" forecolor="#059669" fontSize="8.0" pattern="#,##0.00" bold="true" hTextAlign="Right" vTextAlign="Middle">
+				<box>
+					<pen lineWidth="0.5" lineColor="#E2E8F0"/>
+				</box>
+				<expression><![CDATA[$F{total_amount}]]></expression>
+			</element>
+			<element kind="textField" uuid="3f17695c-d7d5-4c79-8c8d-f5e403e85a83" x="645" y="0" width="75" height="25" fontSize="8.0" hTextAlign="Center" vTextAlign="Middle">
+				<box>
+					<pen lineWidth="0.5" lineColor="#E2E8F0"/>
+				</box>
+				<expression><![CDATA[$F{payment_method}]]></expression>
+			</element>
+			<element kind="textField" uuid="04d18723-f562-44c9-8097-3d79a2d25f08" x="720" y="0" width="82" height="25" fontSize="7.0" hTextAlign="Center" vTextAlign="Middle">
+				<box>
+					<pen lineWidth="0.5" lineColor="#E2E8F0"/>
+				</box>
+				<expression><![CDATA[$F{booking_date}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<pageFooter height="90" splitType="Stretch">
+		<element kind="line" uuid="9765d683-8179-491d-b5c0-edeb289ac979" x="0" y="5" width="802" height="1" forecolor="#0F172A">
+			<pen lineWidth="1.5"/>
+		</element>
+		<element kind="staticText" uuid="a1f436bd-0520-4eaf-9a80-cf7b97f14a83" x="0" y="10" width="350" height="20" forecolor="#0284C7" fontSize="9.0" bold="true" italic="true" vTextAlign="Middle">
+			<text><![CDATA[🚀 Software Created by Deneth (code-DK) 🚀]]></text>
+		</element>
+		<element kind="textField" uuid="d4f995a8-8a8a-4d4e-aa6f-ca728f73a057" x="702" y="10" width="100" height="20" forecolor="#0284C7" fontSize="8.0" bold="true" hTextAlign="Right" vTextAlign="Middle">
+			<expression><![CDATA["Page " + $V{PAGE_NUMBER}]]></expression>
+		</element>
+		<element kind="image" uuid="c079ab9c-701d-4ead-871f-f1083b241271" x="0" y="30" width="70" height="60">
+			<expression><![CDATA["D:/MY Folder/deneth/My Logo/D_k_logo_6-removebg-preview (1).png"]]></expression>
+		</element>
+	</pageFooter>
+</jasperReport>

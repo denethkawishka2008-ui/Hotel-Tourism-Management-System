@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1200.0" stylesheets="@employeedashboard.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Hospitality_and_tourism_system.EmployeeDashboardController">
+   <children>
+      <AnchorPane fx:id="mainAnchorPane" prefHeight="750.0" prefWidth="1200.0">
+         <children>
+            <VBox layoutX="25.0" layoutY="15.0" prefHeight="720.0" prefWidth="1150.0" spacing="12.0">
+               <children>
+                  <!-- Top Banner & Header -->
+                  <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="1150.0" styleClass="glass-panel">
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <children>
+                        <!-- Employee Avatar & Welcome Info -->
+                        <HBox alignment="CENTER_LEFT" spacing="12.0">
+                           <children>
+                              <ImageView fx:id="imgEmployeeAvatar" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" styleClass="circular-avatar" />
+                              <VBox spacing="2.0">
+                                 <children>
+                                    <Label styleClass="brand-title" text="DK - Hotel's &amp; Tourism (Employee Portal)" />
+                                    <Label fx:id="lblEmployeeWelcome" text="Welcome back, Employee!" textFill="#64748b">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        
+                        <VBox HBox.hgrow="ALWAYS" />
+                        
+                        <!-- Live Date & Time & Calendar Picker -->
+                        <HBox alignment="CENTER" spacing="15.0">
+                           <children>
+                              <DatePicker fx:id="calendarPicker" prefHeight="35.0" prefWidth="150.0" promptText="Select Date" />
+                              <VBox alignment="CENTER_RIGHT" spacing="2.0">
+                                 <children>
+                                    <Label fx:id="lblLiveDate" text="2026-10-09" textFill="#0284c7">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblLiveTime" text="12:00:00 AM" textFill="#64748b">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+
+                        <HBox prefWidth="15.0" />
+
+                        <!-- Admin Message Icon Button -->
+                        <Button fx:id="btnMsgAdmin" mnemonicParsing="false" onAction="#handleOpenMessageAdmin" prefHeight="38.0" prefWidth="38.0" styleClass="icon-btn" text="✉">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <HBox prefWidth="8.0" />
+
+                        <!-- Profile / Account Settings Button -->
+                        <Button fx:id="btnProfileDrawer" mnemonicParsing="false" onAction="#handleOpenProfileModal" prefHeight="38.0" prefWidth="38.0" styleClass="icon-btn" text="👤">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+
+                  <!-- Big Team Image Banner Header -->
+                  <HBox fx:id="boxWelcomeBanner" alignment="CENTER" HBox.hgrow="ALWAYS" prefHeight="130.0" styleClass="welcome-banner">
+                     <children>
+                        <ImageView fitHeight="120.0" fitWidth="1120.0" pickOnBounds="true" preserveRatio="false" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0, 0, 3); -fx-background-radius: 12;">
+                           <image>
+                              <Image url="@imgEmployeeAvatar.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+
+                  <!-- Middle Section: Today's Task Card & Admin Notices -->
+                  <HBox spacing="20.0">
+                     <children>
+                        <!-- Today's Assigned Task Model Card -->
+                        <VBox prefHeight="330.0" prefWidth="740.0" spacing="12.0" styleClass="glass-panel">
+                           <padding>
+                              <Insets bottom="18.0" left="20.0" right="20.0" top="18.0" />
+                           </padding>
+                           <children>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <Label text="📅 Today's Assigned Task">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <VBox HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+
+                              <!-- Task Details Model Card -->
+                              <VBox prefHeight="190.0" prefWidth="700.0" spacing="10.0" styleClass="task-card">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Label text="Room Number:" textFill="#64748b">
+                                             <font><Font size="13.0" /></font>
+                                          </Label>
+                                          <VBox HBox.hgrow="ALWAYS" />
+                                          <Label fx:id="lblTaskRoomNo" text="Not Assigned" textFill="#0284c7">
+                                             <font><Font name="System Bold" size="15.0" /></font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Label text="Start Time:" textFill="#64748b">
+                                             <font><Font size="13.0" /></font>
+                                          </Label>
+                                          <VBox HBox.hgrow="ALWAYS" />
+                                          <Label fx:id="lblTaskStartTime" text="--:--" textFill="#1e293b">
+                                             <font><Font name="System Bold" size="13.0" /></font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Label text="End Time (Required to Finish):" textFill="#64748b">
+                                             <font><Font size="13.0" /></font>
+                                          </Label>
+                                          <VBox HBox.hgrow="ALWAYS" />
+                                          <Label fx:id="lblTaskEndTime" text="--:--" textFill="#dc2626">
+                                             <font><Font name="System Bold" size="13.0" /></font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Label text="Room Status:" textFill="#64748b">
+                                             <font><Font size="13.0" /></font>
+                                          </Label>
+                                          <VBox HBox.hgrow="ALWAYS" />
+                                          <Label fx:id="lblTaskRoomStatus" text="Pending" textFill="#d97706">
+                                             <font><Font name="System Bold" size="13.0" /></font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="12.0" left="15.0" right="15.0" top="12.0" />
+                                 </padding>
+                              </VBox>
+
+                              <!-- Finish / Free Button -->
+                              <Button fx:id="btnFinishTask" mnemonicParsing="false" onAction="#handleFinishTask" prefHeight="42.0" prefWidth="700.0" styleClass="btn-success" text="Finish Task &amp; Set Status to Free (Locked until End Time)" />
+                           </children>
+                        </VBox>
+
+                        <!-- Admin Notices Box -->
+                        <VBox prefHeight="330.0" prefWidth="390.0" spacing="10.0" styleClass="glass-panel">
+                           <padding>
+                              <Insets bottom="18.0" left="15.0" right="15.0" top="18.0" />
+                           </padding>
+                           <children>
+                              <Label text="📢 Admin Notices" textFill="#0284c7">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="txtAdminNotices" editable="false" prefHeight="250.0" prefWidth="360.0" promptText="Loading latest notices..." wrapText="true" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+
+      <!-- Account / Profile Edit Modal -->
+      <AnchorPane fx:id="paneProfileModal" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="480.0" styleClass="modal-pane" visible="false">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutX="30.0" layoutY="20.0" prefHeight="560.0" prefWidth="420.0" spacing="10.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label text="👤 My Account &amp; Profile" textFill="#0284c7">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <VBox HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnCloseProfile" mnemonicParsing="false" onAction="#handleCloseProfileModal" styleClass="btn-danger" text=" ✕ " />
+                     </children>
+                  </HBox>
+                  
+                  <HBox alignment="CENTER" spacing="15.0">
+                     <children>
+                        <ImageView fx:id="imgModalAvatar" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" styleClass="circular-avatar" />
+                        <Button fx:id="btnUploadImage" mnemonicParsing="false" onAction="#handleUploadProfileImage" prefHeight="35.0" prefWidth="180.0" styleClass="btn-action" text="📷 Upload Profile Picture" />
+                     </children>
+                  </HBox>
+
+                  <TextField fx:id="txtProfileEmpId" editable="false" promptText="Employee ID" />
+                  <TextField fx:id="txtProfileName" promptText="Full Name" />
+                  <HBox spacing="10.0">
+                     <children>
+                        <TextField fx:id="txtProfileNic" prefHeight="35.0" prefWidth="200.0" promptText="NIC" />
+                        <TextField fx:id="txtProfilePhone" prefHeight="35.0" prefWidth="210.0" promptText="Phone Number" />
+                     </children>
+                  </HBox>
+                  <TextField fx:id="txtProfileEmail" promptText="Email Address" />
+                  <TextField fx:id="txtProfileAddress" promptText="Home Address" />
+                  <HBox spacing="10.0">
+                     <children>
+                        <TextField fx:id="txtProfileUsername" prefHeight="35.0" prefWidth="200.0" promptText="Username" />
+                        <PasswordField fx:id="txtProfilePassword" prefHeight="35.0" prefWidth="210.0" promptText="Password" />
+                     </children>
+                  </HBox>
+                  
+                  <HBox alignment="CENTER" spacing="15.0" style="-fx-padding: 5 0 0 0;">
+                     <children>
+                        <Button fx:id="btnSaveProfile" mnemonicParsing="false" onAction="#handleSaveProfile" prefHeight="40.0" prefWidth="180.0" styleClass="btn-success" text="Save Changes" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+
+      <!-- Admin Message Sending Modal -->
+      <AnchorPane fx:id="paneMessageModal" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="330.0" prefWidth="440.0" styleClass="modal-pane" visible="false">
+         <children>
+            <VBox layoutX="25.0" layoutY="20.0" prefHeight="290.0" prefWidth="390.0" spacing="12.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label text="✉ Send Message to Admin" textFill="#0284c7">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <VBox HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" onAction="#handleCloseMessageModal" styleClass="btn-danger" text=" ✕ " />
+                     </children>
+                  </HBox>
+                  <TextArea fx:id="txtAdminMessageBody" prefHeight="160.0" prefWidth="390.0" promptText="Type your message or request to admin here..." wrapText="true" />
+                  <Button mnemonicParsing="false" onAction="#handleSendAdminMessage" prefHeight="40.0" prefWidth="390.0" styleClass="btn-success" text="Send Message Now" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

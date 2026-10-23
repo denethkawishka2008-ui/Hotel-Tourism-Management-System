@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="640.0" prefWidth="980.0" style="-fx-background-color: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364); -fx-font-family: 'Segoe UI', Helvetica, Arial, sans-serif;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Hospitality_and_tourism_system.room_management">
+   <children>
+      <!-- Top Header Title with Gold Accent -->
+      <Label layoutX="35.0" layoutY="20.0" text="👑 Luxury Room Management Dashboard" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #f1c40f; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 8, 0, 0, 2);" />
+      <Label layoutX="37.0" layoutY="52.0" text="Manage hotel rooms, pricing, and availability status seamlessly" style="-fx-font-size: 13px; -fx-text-fill: #bdc3c7;" />
+
+      <!-- Left Side: Input Form Panel (Glass Card with Emerald Touch) -->
+      <AnchorPane layoutX="35.0" layoutY="85.0" prefHeight="525.0" prefWidth="320.0" style="-fx-background-color: rgba(255, 255, 255, 0.96); -fx-background-radius: 16px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 20, 0, 0, 8); -fx-padding: 15px;">
+         <children>
+            <Label layoutX="18.0" layoutY="15.0" text="Room Information" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #0f172a;" />
+
+            <!-- Room ID -->
+            <Label layoutX="18.0" layoutY="48.0" text="🆔 ROOM ID" style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #16a085;" />
+            <TextField fx:id="txtRoomId" layoutX="18.0" layoutY="64.0" prefHeight="32.0" prefWidth="284.0" promptText="Auto Generated" style="-fx-background-radius: 8px; -fx-border-color: #cbd5e1; -fx-border-radius: 8px; -fx-background-color: #f8fafc; -fx-font-weight: bold;" />
+
+            <!-- Room Number -->
+            <Label layoutX="18.0" layoutY="102.0" text="🚪 ROOM NUMBER" style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #16a085;" />
+            <TextField fx:id="txtRoomNumber" layoutX="18.0" layoutY="118.0" prefHeight="32.0" prefWidth="284.0" promptText="e.g. Room 01" style="-fx-background-radius: 8px; -fx-border-color: #cbd5e1; -fx-border-radius: 8px;" />
+
+            <!-- Room Type -->
+            <Label layoutX="18.0" layoutY="156.0" text="🛏️ ROOM TYPE" style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #16a085;" />
+            <ComboBox fx:id="cmbRoomType" layoutX="18.0" layoutY="172.0" prefHeight="32.0" prefWidth="284.0" promptText="Select Room Type" style="-fx-background-radius: 8px; -fx-border-color: #cbd5e1; -fx-border-radius: 8px; -fx-background-color: white;" />
+
+            <!-- Status -->
+            <Label layoutX="18.0" layoutY="210.0" text="📊 STATUS" style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #16a085;" />
+            <ComboBox fx:id="cmbStatus" layoutX="18.0" layoutY="226.0" prefHeight="32.0" prefWidth="284.0" promptText="Select Status" style="-fx-background-radius: 8px; -fx-border-color: #cbd5e1; -fx-border-radius: 8px; -fx-background-color: white;" />
+
+            <!-- Price -->
+            <Label layoutX="18.0" layoutY="264.0" text="💰 PRICE" style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #16a085;" />
+            <TextField fx:id="txtprice" layoutX="18.0" layoutY="280.0" prefHeight="32.0" prefWidth="284.0" promptText="0.00" style="-fx-background-radius: 8px; -fx-border-color: #cbd5e1; -fx-border-radius: 8px; -fx-background-color: #fef9c3; -fx-font-weight: bold; -fx-text-fill: #b45309;" />
+
+            <!-- Action Buttons with Gradients & Shadows -->
+            <Button fx:id="btnAdd" layoutX="18.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleAddRoom" prefHeight="35.0" prefWidth="284.0" style="-fx-background-color: linear-gradient(to bottom, #10b981, #059669); -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-background-radius: 8px; -fx-effect: dropshadow(three-pass-box, rgba(16,185,129,0.4), 5, 0, 0, 2);" text="➕ Add Room" />
+            
+            <GridPane layoutX="18.0" layoutY="368.0" hgap="10.0" vgap="8.0">
+               <columnConstraints>
+                  <ColumnConstraints percentWidth="50" />
+                  <ColumnConstraints percentWidth="50" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#handleUpdateRoom" prefHeight="34.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom, #3b82f6, #1d4ed8); -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-background-radius: 8px;" text="✏ Update" GridPane.columnIndex="0" />
+                  <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#handleDeleteRoom" prefHeight="34.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to bottom, #ef4444, #dc2626); -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-background-radius: 8px;" text="🗑️ Delete" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+
+            <Button fx:id="btnClear" layoutX="18.0" layoutY="412.0" mnemonicParsing="false" onAction="#handleClear" prefHeight="32.0" prefWidth="284.0" style="-fx-background-color: #64748b; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-background-radius: 8px;" text="🧹 Clear Fields" />
+         </children>
+      </AnchorPane>
+
+      <!-- Right Side: Table, Search & Modern Room Image Banner Panel -->
+      <AnchorPane layoutX="375.0" layoutY="85.0" prefHeight="525.0" prefWidth="570.0" style="-fx-background-color: rgba(255, 255, 255, 0.96); -fx-background-radius: 16px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 20, 0, 0, 8); -fx-padding: 15px;">
+         <children>
+            <!-- Search Textbox -->
+            <Label layoutX="20.0" layoutY="18.0" text="🔍 Search" style="-fx-font-weight: bold; -fx-text-fill: #16a085; -fx-font-size: 11px;" />
+            <TextField fx:id="txtSearch" layoutX="80.0" layoutY="14.0" prefHeight="32.0" prefWidth="470.0" promptText="Search by Room Number, Type or Status..." style="-fx-background-radius: 8px; -fx-border-color: #cbd5e1; -fx-border-radius: 8px;" />
+
+            <!-- TableView for Rooms -->
+            <TableView fx:id="tblRooms" layoutX="20.0" layoutY="58.0" prefHeight="265.0" prefWidth="530.0" style="-fx-background-color: transparent; -fx-border-color: #cbd5e1; -fx-border-radius: 8px;">
+              <columns>
+                <TableColumn fx:id="colRoomId" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="colRoomNumber" prefWidth="110.0" text="Room No" />
+                <TableColumn fx:id="colRoomType" prefWidth="120.0" text="Type" />
+                <TableColumn fx:id="colStatus" prefWidth="120.0" text="Status" />
+                <TableColumn fx:id="colprice" prefWidth="128.0" text="Price" />
+              </columns>
+            </TableView>
+
+            <!-- Bottom Section: Clean Room Image Banner Area -->
+            <AnchorPane layoutX="20.0" layoutY="335.0" prefHeight="165.0" prefWidth="530.0" style="-fx-background-color: #f8fafc; -fx-background-radius: 10px; -fx-border-color: #e2e8f0; -fx-border-radius: 10px;">
+               <children>
+                  <!-- Clean Image View -->
+                  <ImageView fitHeight="145.0" fitWidth="195.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 8, 0, 0, 3);">
+                     <image>
+                        <Image url="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&amp;fit=crop&amp;w=400&amp;q=80" />
+                     </image>
+                  </ImageView>
+                  
+                  <Label layoutX="220.0" layoutY="20.0" text="Luxury Room Suite" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0f172a;" />
+                  <Label layoutX="220.0" layoutY="50.0" text="Select any room from the table above" style="-fx-font-size: 12px; -fx-text-fill: #64748b;" />
+                  <Label layoutX="220.0" layoutY="70.0" text="to update details or delete records safely." style="-fx-font-size: 12px; -fx-text-fill: #64748b;" />
+                  
+                  <!-- Decorative Status Pill -->
+                  <Label layoutX="220.0" layoutY="105.0" style="-fx-background-color: #d1fae5; -fx-text-fill: #065f46; -fx-padding: 4 12 4 12; -fx-background-radius: 12px; -fx-font-weight: bold; -fx-font-size: 11px;" text="● System Active &amp; Ready" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

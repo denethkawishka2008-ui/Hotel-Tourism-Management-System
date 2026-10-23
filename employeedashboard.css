@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* --- LUXURY PASTEL COLOR GRADIENT BACKGROUND --- */
+.root {
+    -fx-font-family: 'Poppins', sans-serif;
+    -fx-background-color: linear-gradient(to bottom right, #e0f2fe, #f0f9ff, #e0e7ff, #fae8ff);
+    -fx-text-fill: #0f172a;
+}
+
+/* Glassmorphism Panel with Glowing Gradient Outlines */
+.glass-panel {
+    -fx-background-color: rgba(255, 255, 255, 0.75);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: linear-gradient(to right, #38bdf8, #818cf8, #c084fc);
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(three-pass-box, rgba(99, 102, 241, 0.2), 20, 0, 0, 6);
+}
+
+/* Brand Title Style */
+.brand-title {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to right, #0284c7, #4f46e5, #9333ea);
+}
+
+/* Standard Labels */
+Label {
+    -fx-text-fill: #1e293b;
+}
+
+/* Big Welcome Banner Style */
+.welcome-banner {
+    -fx-background-color: rgba(255, 255, 255, 0.65);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: linear-gradient(to right, #38bdf8, #a855f7);
+    -fx-border-width: 2;
+    -fx-padding: 8;
+    -fx-effect: dropshadow(three-pass-box, rgba(56, 189, 248, 0.25), 18, 0, 0, 5);
+}
+
+/* Task Card with Vibrant Cyan/Indigo Outline */
+.task-card {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: linear-gradient(to bottom right, #0ea5e9, #6366f1);
+    -fx-border-width: 1.8;
+    -fx-padding: 16;
+    -fx-effect: dropshadow(three-pass-box, rgba(14, 165, 233, 0.2), 15, 0, 0, 4);
+}
+
+/* Inputs & TextFields with Smooth Hover Glow Animation */
+.text-field, .password-field, .text-area, .date-picker {
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-text-fill: #0f172a;
+    -fx-prompt-text-fill: #64748b;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #a5f3fc;
+    -fx-border-width: 1.5;
+    -fx-padding: 10 14;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.text-field:hover, .password-field:hover, .text-area:hover, .date-picker:hover {
+    -fx-border-color: #38bdf8;
+    -fx-background-color: #ffffff;
+}
+
+.text-field:focused, .password-field:focused, .text-area:focused, .date-picker:focused {
+    -fx-border-color: #6366f1;
+    -fx-border-width: 2;
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(three-pass-box, rgba(99, 102, 241, 0.35), 12, 0, 0, 0);
+}
+
+.text-area .content {
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-background-radius: 10;
+    -fx-text-fill: #0f172a;
+}
+
+/* Glowing Circular Avatar Frame */
+.circular-avatar {
+    -fx-background-radius: 50em;
+    -fx-border-radius: 50em;
+    -fx-border-color: linear-gradient(to bottom right, #38bdf8, #a855f7);
+    -fx-border-width: 2.5;
+    -fx-effect: dropshadow(three-pass-box, rgba(168, 85, 247, 0.4), 14, 0, 0, 0);
+}
+
+/* --- VIBRANT ICON BUTTONS (Message ✉ & Profile 👤) --- */
+.icon-btn {
+    -fx-background-color: linear-gradient(to bottom right, #ffffff, #f0f9ff);
+    -fx-background-radius: 30;
+    -fx-text-fill: #0284c7;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-border-color: linear-gradient(to right, #38bdf8, #818cf8);
+    -fx-border-radius: 30;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(three-pass-box, rgba(56, 189, 248, 0.25), 8, 0, 0, 2);
+    -fx-transition: all 0.25s ease-in-out;
+}
+
+/* Icon Button Hover Animation */
+.icon-btn:hover {
+    -fx-background-color: linear-gradient(to bottom right, #38bdf8, #6366f1);
+    -fx-text-fill: #ffffff;
+    -fx-scale-x: 1.12;
+    -fx-scale-y: 1.12;
+    -fx-effect: dropshadow(three-pass-box, rgba(99, 102, 241, 0.5), 15, 0, 0, 4);
+}
+
+/* --- BUTTONS STYLING & ANIMATIONS --- */
+.button {
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-transition: all 0.25s ease-in-out;
+}
+
+.button:hover {
+    -fx-scale-x: 1.04;
+    -fx-scale-y: 1.04;
+}
+
+.button:pressed {
+    -fx-scale-x: 0.96;
+    -fx-scale-y: 0.96;
+    -fx-opacity: 0.85;
+}
+
+.btn-action {
+    -fx-background-color: linear-gradient(to right, #0ea5e9, #6366f1);
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(three-pass-box, rgba(14, 165, 233, 0.4), 10, 0, 0, 3);
+}
+.btn-action:hover {
+    -fx-background-color: linear-gradient(to right, #0284c7, #4f46e5);
+}
+
+.btn-success {
+    -fx-background-color: linear-gradient(to right, #10b981, #059669);
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(three-pass-box, rgba(16, 185, 129, 0.4), 10, 0, 0, 3);
+}
+.btn-success:hover {
+    -fx-background-color: linear-gradient(to right, #059669, #047857);
+}
+
+.btn-danger {
+    -fx-background-color: linear-gradient(to right, #f43f5e, #e11d48);
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(three-pass-box, rgba(244, 63, 94, 0.4), 10, 0, 0, 3);
+}
+.btn-danger:hover {
+    -fx-background-color: linear-gradient(to right, #e11d48, #be123c);
+}
+
+/* Modal Popup Window */
+.modal-pane {
+    -fx-background-color: rgba(255, 255, 255, 0.96);
+    -fx-background-radius: 24;
+    -fx-border-color: linear-gradient(to bottom right, #38bdf8, #a855f7);
+    -fx-border-width: 2.5;
+    -fx-border-radius: 24;
+    -fx-effect: dropshadow(three-pass-box, rgba(168, 85, 247, 0.35), 40, 0, 0, 10);
+}

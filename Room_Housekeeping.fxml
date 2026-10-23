@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="650.0" spacing="15.0" style="-fx-background-color: #f4f6f9;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Hospitality_and_tourism_system.Room_Housekeeping">
+   
+   <padding>
+      <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+   </padding>
+
+   <!-- Top Banner Image & Title Area -->
+   <StackPane prefHeight="110.0" prefWidth="600.0" style="-fx-background-color: #2c3e50; -fx-background-radius: 10;">
+      <children>
+         <ImageView fitHeight="110.0" fitWidth="600.0" opacity="0.3" preserveRatio="false">
+            <image>
+               <Image url="@resources/hotel_bg.png" />
+            </image>
+         </ImageView>
+         <VBox alignment="CENTER" spacing="5.0">
+            <children>
+               <Label text="Room Housekeeping Management" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="22.0" />
+                  </font>
+               </Label>
+               <Label text="Assign and track room cleaning status efficiently" textFill="#bdc3c7">
+                  <font>
+                     <Font size="13.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
+      </children>
+   </StackPane>
+
+   <!-- Main Form Container Card -->
+   <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 10, 0, 0, 4);">
+      <padding>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </padding>
+      <children>
+         
+         <!-- Room Selection & Last Cleaned Info -->
+         <GridPane hgap="15.0" vgap="12.0">
+           <columnConstraints>
+             <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.0" minWidth="10.0" prefWidth="150.0" />
+             <ColumnConstraints hgrow="SOMETIMES" maxWidth="410.0" minWidth="10.0" prefWidth="380.0" />
+           </columnConstraints>
+           <rowConstraints>
+             <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+             <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+             <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+            <children>
+               <Label text="Select Dirty Room:" textFill="#34495e">
+                  <font>
+                     <Font name="System Bold" size="13.0" />
+                  </font>
+               </Label>
+               <ComboBox fx:id="cmbDirtyRooms" prefHeight="32.0" prefWidth="380.0" promptText="-- Select Room (Dirty) --" style="-fx-background-radius: 5;" GridPane.columnIndex="1" />
+               
+               <Label text="Last Cleaned By:" textFill="#7f8c8d" GridPane.rowIndex="1">
+                  <font>
+                     <Font size="12.0" />
+                  </font>
+               </Label>
+               <Label fx:id="lblLastCleanedBy" text="N/A" textFill="#2c3e50" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font>
+               </Label>
+
+               <Label text="Last Cleaned Date/Time:" textFill="#7f8c8d" GridPane.rowIndex="2">
+                  <font>
+                     <Font size="12.0" />
+                  </font>
+               </Label>
+               <Label fx:id="lblLastCleanedTime" text="N/A" textFill="#2c3e50" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font>
+               </Label>
+            </children>
+         </GridPane>
+
+         <Separator prefWidth="200.0" />
+
+         <!-- Employee Assignment Section -->
+         <Label text="Employee Details" textFill="#2980b9">
+            <font>
+               <Font name="System Bold" size="15.0" />
+            </font>
+         </Label>
+
+         <GridPane hgap="15.0" vgap="12.0">
+           <columnConstraints>
+             <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="130.0" />
+             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="380.0" />
+           </columnConstraints>
+           <rowConstraints>
+             <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+             <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+             <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+             <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+            <children>
+               <Label text="Employee Name:" textFill="#34495e">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font>
+               </Label>
+          
+               <ComboBox fx:id="cmbEmpName" prefHeight="32.0" prefWidth="380.0" promptText="-- Select Working Employee --" style="-fx-background-radius: 5;" GridPane.columnIndex="1" />
+
+               <Label text="Employee ID:" textFill="#34495e" GridPane.rowIndex="1">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="txtEmpId" editable="false" style="-fx-background-radius: 5; -fx-background-color: #ecf0f1;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+               <Label text="NIC Number:" textFill="#34495e" GridPane.rowIndex="2">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="txtEmpNic" editable="false" style="-fx-background-radius: 5; -fx-background-color: #ecf0f1;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+               <Label text="Phone Number:" textFill="#34495e" GridPane.rowIndex="3">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="txtEmpPhone" editable="false" style="-fx-background-radius: 5; -fx-background-color: #ecf0f1;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            </children>
+         </GridPane>
+
+         <Separator prefWidth="200.0" />
+
+         <!-- Date & Time Pickers -->
+         <GridPane hgap="15.0" vgap="12.0">
+           <columnConstraints>
+             <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="130.0" />
+             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="380.0" />
+           </columnConstraints>
+           <rowConstraints>
+             <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+             <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+            <children>
+               <Label text="Cleaning Date:" textFill="#34495e">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font>
+               </Label>
+               <DatePicker fx:id="dpCleaningDate" prefHeight="32.0" prefWidth="380.0" style="-fx-background-radius: 5;" GridPane.columnIndex="1" />
+
+               <Label text="Start / End Time:" textFill="#34495e" GridPane.rowIndex="1">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font>
+               </Label>
+               <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <children>
+                     <TextField fx:id="txtStartTime" prefHeight="30.0" prefWidth="180.0" promptText="Start Time (e.g. 08:30 AM)" style="-fx-background-radius: 5;" />
+                     <TextField fx:id="txtEndTime" prefHeight="30.0" prefWidth="180.0" promptText="End Time (e.g. 09:45 AM)" style="-fx-background-radius: 5;" />
+                  </children>
+               </HBox>
+            </children>
+         </GridPane>
+
+      </children>
+   </VBox>
+
+   <!-- Action Buttons Bottom Bar -->
+   <HBox alignment="CENTER_RIGHT" spacing="12.0">
+      <children>
+         <Button fx:id="btnClear" mnemonicParsing="false" onAction="#handleClear" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand;" text="Clear">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+         </Button>
+         <Button fx:id="btnSendTask" mnemonicParsing="false" onAction="#handleSendTask" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand;" text="Assign Task">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+         </Button>
+      </children>
+   </HBox>
+
+</VBox>

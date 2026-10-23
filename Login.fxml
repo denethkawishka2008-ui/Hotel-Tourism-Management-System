@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane stylesheets="@login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Hospitality_and_tourism_system.LoginController">
+   <children>
+      <!-- Background Ambient Glow Animation Container -->
+      <VBox fx:id="bgGlowContainer" alignment="CENTER" styleClass="bg-glow-container" />
+
+      <!-- Main Content Card with Shadow -->
+      <VBox alignment="CENTER" maxWidth="420.0" spacing="20.0" styleClass="login-card">
+         <padding>
+            <Insets bottom="35.0" left="35.0" right="35.0" top="35.0" />
+         </padding>
+         <children>
+            <!-- Logo Image Container (Properly Sized) -->
+            <ImageView fx:id="imgLogo" fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" styleClass="logo-image" />
+
+            <!-- Input Fields -->
+            <TextField fx:id="txtUsername" promptText="Username or Email" />
+            <PasswordField fx:id="txtPassword" promptText="Password" />
+
+            <!-- Login Button -->
+            <Button fx:id="btnLogin" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleLogin" styleClass="btn-login" text="LOGIN" />
+
+            <!-- Dynamic Progress Bar matching theme beauty -->
+            <ProgressBar fx:id="progressBar" maxWidth="Infinity" progress="0.0" styleClass="custom-progress" />
+         </children>
+      </VBox>
+   </children>
+</StackPane>

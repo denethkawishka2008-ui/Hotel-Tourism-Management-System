@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="580.0" spacing="12.0" stylesheets="@employee_management.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Hospitality_and_tourism_system.Employee_managementcontroller">
+   
+   <padding>
+      <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+   </padding>
+
+   <!-- Title Banner with Back Button -->
+   <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="banner-box">
+      <children>
+         <Button fx:id="btnBack" mnemonicParsing="false" onAction="#handleBackToDashboard" styleClass="button" text="← Back">
+            <font><Font name="System Bold" size="12.0" /></font>
+         </Button>
+         <Label text="Add New Employee" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+         </Label>
+      </children>
+   </HBox>
+
+   <!-- Form Fields Container -->
+   <VBox spacing="10.0" styleClass="form-card">
+      <padding>
+         <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+      </padding>
+      <children>
+         <GridPane hgap="10.0" vgap="8.0">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="120.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="360.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+               <!-- Employee ID -->
+               <Label text="Employee ID:" GridPane.rowIndex="0"><font><Font name="System Bold" size="12.0" /></font></Label>
+               <TextField fx:id="txtEmpId" editable="false" promptText="Auto-generated" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+               <!-- Name -->
+               <Label text="Full Name:" GridPane.rowIndex="1"><font><Font name="System Bold" size="12.0" /></font></Label>
+               <TextField fx:id="txtEmpName" promptText="Enter employee name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+               <!-- Role ComboBox -->
+               <Label text="Employee Role:" GridPane.rowIndex="2"><font><Font name="System Bold" size="12.0" /></font></Label>
+               <ComboBox fx:id="cmbEmpRole" prefHeight="26.0" prefWidth="360.0" promptText="-- Select Role --" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+               <!-- Address -->
+               <Label text="Address:" GridPane.rowIndex="3"><font><Font name="System Bold" size="12.0" /></font></Label>
+               <TextField fx:id="txtAddress" promptText="Enter address" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+               <!-- Gender -->
+               <Label text="Gender:" GridPane.rowIndex="4"><font><Font name="System Bold" size="12.0" /></font></Label>
+               <ComboBox fx:id="cmbGender" prefHeight="26.0" prefWidth="360.0" promptText="-- Select Gender --" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+               <!-- Age -->
+               <Label text="Age:" GridPane.rowIndex="5"><font><Font name="System Bold" size="12.0" /></font></Label>
+               <TextField fx:id="txtAge" promptText="Enter age" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+               <!-- Email -->
+               <Label text="Email Address:" GridPane.rowIndex="6"><font><Font name="System Bold" size="12.0" /></font></Label>
+               <TextField fx:id="txtEmail" promptText="example@domain.com" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+               <!-- NIC -->
+               <Label text="NIC Number:" GridPane.rowIndex="7"><font><Font name="System Bold" size="12.0" /></font></Label>
+               <TextField fx:id="txtNic" promptText="Enter NIC" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+               <!-- Phone Number -->
+               <Label text="Phone Number:" GridPane.rowIndex="8"><font><Font name="System Bold" size="12.0" /></font></Label>
+               <TextField fx:id="txtPhone" promptText="07XXXXXXXX" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+               <!-- Profile Image Upload -->
+               <Label text="Profile Image:" GridPane.rowIndex="9"><font><Font name="System Bold" size="12.0" /></font></Label>
+               <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                  <children>
+                     <Button fx:id="btnBrowseImage" mnemonicParsing="false" onAction="#handleBrowseImage" text="Browse Image" />
+                     <Label fx:id="lblImagePath" text="No file chosen" />
+                  </children>
+               </HBox>
+
+               <!-- Username -->
+               <Label text="Username:" GridPane.rowIndex="10"><font><Font name="System Bold" size="12.0" /></font></Label>
+               <TextField fx:id="txtUsername" promptText="Login username" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+
+               <!-- Password -->
+               <Label text="Password:" GridPane.rowIndex="11"><font><Font name="System Bold" size="12.0" /></font></Label>
+               <PasswordField fx:id="txtPassword" promptText="Enter password" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+
+               <!-- Confirm Password -->
+               <Label text="Confirm Pass:" GridPane.rowIndex="12"><font><Font name="System Bold" size="12.0" /></font></Label>
+               <PasswordField fx:id="txtConfirmPassword" promptText="Re-enter password" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            </children>
+         </GridPane>
+      </children>
+   </VBox>
+
+   <!-- Bottom Action Buttons -->
+   <HBox alignment="CENTER_RIGHT" spacing="10.0">
+      <children>
+         <Button fx:id="btnClear" mnemonicParsing="false" onAction="#handleClear" prefHeight="30.0" prefWidth="90.0" text="Clear">
+            <font><Font name="System Bold" size="12.0" /></font>
+         </Button>
+         <Button fx:id="btnSave" mnemonicParsing="false" onAction="#handleSaveEmployee" prefHeight="30.0" prefWidth="120.0" text="Save Employee">
+            <font><Font name="System Bold" size="12.0" /></font>
+         </Button>
+      </children>
+   </HBox>
+
+</VBox>
